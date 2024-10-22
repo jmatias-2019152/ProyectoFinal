@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.9' // Cambia a la versión que desees
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+	id 'application' // Agrega este plugin
+}
+
+group = 'com.ejemplo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17' // Asegúrate de que la versión coincida con tu JDK
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Starter
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter'
+
+	// Spring Boot Starter Web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Spring Boot Starter Data MongoDB
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	// Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// JWT (JSON Web Tokens)
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+	// Para pruebas
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mockito:mockito-core'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// Especifica la clase principal de tu aplicación
+application {
+	mainClassName = 'com.finalgastos.gastosApi.GastosApiApplication' // Asegúrate de que este sea el nombre correcto
+}
